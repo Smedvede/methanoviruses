@@ -23,4 +23,17 @@
 
 ```CRISPRCasFinder -in methanogens_database.fna -so sel392.so -maxSP 200 -cSA -q```
 
+2) Matching CRISPR spacers to predicted viral sequences using blast+/2.13.0:
+
+```blastn -query spacers_methanogens.fa -db viral_contigs.fna -word_size 7  -num_threads 4  -evalue 0.001 -outfmt "6 qseqid sseqid slen sstart send evalue qseq sseq qlen qstart qend bitscore score sstrand nident positive staxids sscinames stitle"  > blastn_spacer_hits```
+
+```cat blastn_spacer_hits | awk '{if ($16/$9 > 0.8999) print}' > blastn_spacer_hits_09.txt```
+
+3) Matching host proteins to viral contigs using blast+/2.13.0:
+
+```blastp -query methanogens_database.faa -db viral_contigs.faa -out blastp_host_proteins_hits -num_threads 4 -evalue 0.00001 -outfmt "6 qseqid sseqid slen sstart send evalue qseq sseq qlen qstart qend bitscore score sstrand nident positive staxids sscinames stitle" -max_target_seqs 1000 ```
+
+```cat blastp_host_proteins_hits | awk '{if ($16/$9 > 0.7999) print}' > blastp_host_proteins_hits_08.txt```
+
+
 
