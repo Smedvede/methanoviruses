@@ -18,4 +18,9 @@
 
 ```hmmscan --tblout methanogen_viruses.phrogs.tab -E 0.0000000001 --cpu 10 -o methanogen_viruses.phrogs.txt --noali phrogs_database.hmm viral_contigs.faa```
 
+### Host prediction
+1) Constructing CRISPRdb using CRISPRCasFinder/4.2.20:
+
+```CRISPRCasFinder -in methanogens_database.fna -so sel392.so -maxSP 200 -cSA -q```
+
 
