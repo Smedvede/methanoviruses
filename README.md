@@ -10,7 +10,7 @@
 
 ``` spades.py --metaviral --only-assembler -o SRR11241201_res -1 SRR11241201_1.fastq.gz -2 SRR11241201_2.fastq.gz -m 600 -t 50 ```
 
-3) Prediction of genes with prodigal v2.6.3:
+2) Prediction of genes with prodigal v2.6.3:
 
 ```prodigal -p meta -i methanogens_database.fna -a methanogens_database.faa```
 
