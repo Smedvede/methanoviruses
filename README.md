@@ -21,6 +21,7 @@
 5) Prediction of viruses with Virsorter2/2.2.3:
 
 ```virsorter config --set HMMSEARCH_THREADS=30```
+
 ```virsorter run -w result.out --keep-original-seq -i methanogens_database.fna --min-length 1000 --min-score 0.5 -j 30 all```
 
 ### Host prediction
