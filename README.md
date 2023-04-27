@@ -2,7 +2,7 @@
 
 ## Pipeline overview
 
-![alt text](https://github.com/Smedvede/methanoviruses/pipeline.png?raw=true)
+![pipeline](pipeline.png)
 
 ## Example commands
 
