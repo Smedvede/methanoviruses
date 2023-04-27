@@ -2,6 +2,8 @@
 
 ## Pipeline overview
 
+![alt text](https://github.com/Smedvede/methanoviruses/pipeline.png?raw=true)
+
 ## Example commands
 
 ### Identification of viral sequences
