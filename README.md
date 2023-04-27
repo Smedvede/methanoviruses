@@ -27,7 +27,7 @@
 
 ```blastn -query spacers_methanogens.fa -db viral_contigs.fna -word_size 7  -num_threads 4  -evalue 0.001 -outfmt "6 qseqid sseqid slen sstart send evalue qseq sseq qlen qstart qend bitscore score sstrand nident positive staxids sscinames stitle"  > blastn_spacer_hits```
 
-Filetring hits with > 90% identity:
+   Filetring hits with > 90% identity:
 
 ```cat blastn_spacer_hits | awk '{if ($16/$9 > 0.8999) print}' > blastn_spacer_hits_09.txt```
 
