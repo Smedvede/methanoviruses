@@ -1,4 +1,7 @@
 # A global virome of methanogenic archaea highlights novel diversity and adaptations to the gut environment
+
+## Pipeline overview
+
 ## Example commands
 
 ### Identification of viral sequences
