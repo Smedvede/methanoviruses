@@ -5,23 +5,28 @@
 ## Example commands
 
 ### Identification of viral sequences
-1) Prediction of genes with prodigal v2.6.3:
+
+1) Assembly of viral sequences from metagenomes using spades/3.5.15
+
+``` spades.py --metaviral --only-assembler -o SRR11241201_res -1 SRR11241201_1.fastq.gz -2 SRR11241201_2.fastq.gz -m 600 -t 50 ```
+
+3) Prediction of genes with prodigal v2.6.3:
 
 ```prodigal -p meta -i methanogens_database.fna -a methanogens_database.faa```
 
-2) Prediction of MCP, terminase and portal genes with hmmer/3.3.2:
+3) Prediction of MCP, terminase and portal genes with hmmer/3.3.2:
 
 ```hmmsearch -E 1e-10 --domtblout methanogens.MCP.hmmsearch.txt MCP.hmm methanogens_database.faa```
 
-3) Check completeness of contig with CheckV/1.0.1:
+4) Check completeness of contig with CheckV/1.0.1:
 
 ``` checkv end_to_end viral_contigs.fna output_dir -t 16```
 
-4) Prediction of MGE-specific genes with hmmscan using phrogs database (ver3):
+5) Prediction of MGE-specific genes with hmmscan using phrogs database (ver3):
 
 ```hmmscan --tblout methanogen_viruses.phrogs.tab -E 1e-10 --cpu 10 -o methanogen_viruses.phrogs.txt --noali phrogs_database.hmm viral_contigs.faa```
 
-5) Prediction of viruses with Virsorter2/2.2.3:
+6) Prediction of viruses with Virsorter2/2.2.3:
 
 ```virsorter config --set HMMSEARCH_THREADS=30```
 
