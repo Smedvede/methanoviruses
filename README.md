@@ -18,6 +18,11 @@
 
 ```hmmscan --tblout methanogen_viruses.phrogs.tab -E 1e-10 --cpu 10 -o methanogen_viruses.phrogs.txt --noali phrogs_database.hmm viral_contigs.faa```
 
+5) Prediction of viruses with Virsorter2/2.2.3:
+
+```virsorter config --set HMMSEARCH_THREADS=30
+virsorter run -w result.out --keep-original-seq -i methanogens_database.fna --min-length 1000 --min-score 0.5 -j 30 all```
+
 ### Host prediction
 1) Constructing CRISPRdb using CRISPRCasFinder/4.2.20:
 
