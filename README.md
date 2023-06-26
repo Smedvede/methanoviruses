@@ -2,7 +2,7 @@
 
 ## Pipeline overview
 
-![pipeline](pipeline.png)
+![pipeline](pipeline_ver1.png)
 
 ## Example commands
 
